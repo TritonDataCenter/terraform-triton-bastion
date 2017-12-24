@@ -30,5 +30,5 @@ module "bastion" {
     "${data.triton_network.private.id}",
   ]
 
-  machine_count  = "2"
+  machine_count = "2"
 }
