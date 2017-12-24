@@ -49,8 +49,9 @@ EOF
 }
 
 variable "role_tag_value" {
-  description = "The 'role' tag value allow access FROM the Bastion machine(s) TO other machines."
+  description = "The 'role' tag value to assign to the Bastion machine(s)."
   type        = "string"
+  default     = "bastion"
 }
 
 variable "cns_service_name" {

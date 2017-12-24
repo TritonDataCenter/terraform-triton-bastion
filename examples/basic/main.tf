@@ -31,5 +31,4 @@ module "bastion" {
   ]
 
   machine_count  = "2"
-  role_tag_value = "bastion"
 }
