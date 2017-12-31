@@ -1,4 +1,4 @@
-# Basic Triton Bastion Example
+# Bastion Machines
 
 Creates _two_ bastion machines.
 
