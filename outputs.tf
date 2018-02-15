@@ -9,8 +9,8 @@ output "bastion_user" {
   value = "${var.user}"
 }
 
-output "bastion_public_address" {
-  value = "${local.bastion_public_address}"
+output "bastion_address" {
+  value = "${local.bastion_address}"
 }
 
 output "bastion_cns_service_name" {

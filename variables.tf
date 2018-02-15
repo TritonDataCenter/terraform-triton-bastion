@@ -54,8 +54,8 @@ variable "cns_service_name" {
   default     = "bastion"
 }
 
-variable "public_cns_fqdn_base" {
-  description = "The _public_ fully qualified domain name base for the CNS address - e.g. 'triton.zone' for Joyent Public Cloud."
+variable "cns_fqdn_base" {
+  description = "The fully qualified domain name base for the CNS address - e.g. 'triton.zone' for Joyent Public Cloud."
   type        = "string"
   default     = "triton.zone"
 }

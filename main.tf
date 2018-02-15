@@ -20,7 +20,7 @@ data "triton_account" "current" {}
 # Locals
 #
 locals {
-  bastion_public_address = "${var.cns_service_name}.svc.${data.triton_account.current.id}.${data.triton_datacenter.current.name}.${var.public_cns_fqdn_base}"
+  bastion_address = "${var.cns_service_name}.svc.${data.triton_account.current.id}.${data.triton_datacenter.current.name}.${var.cns_fqdn_base}"
 }
 
 #
