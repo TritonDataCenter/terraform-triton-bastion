@@ -37,7 +37,7 @@ EOF
   default = "root"
 }
 
-variable "ssh_client_access" {
+variable "client_access" {
   description = <<EOF
 'From' targets to allow clients to access the Bastion machines' ssh port - i.e. access from other VMs or public internet.
 See https://docs.joyent.com/public-cloud/network/firewall/cloud-firewall-rules-reference#target
@@ -48,14 +48,14 @@ EOF
   default = ["any"]
 }
 
-variable "role_tag_value" {
-  description = "The 'role' tag value to assign to the Bastion machine(s)."
-  type        = "string"
-  default     = "bastion"
-}
-
 variable "cns_service_name" {
   description = "The Bastion CNS service name. Note: this is the service name only, not the full CNS record."
   type        = "string"
   default     = "bastion"
+}
+
+variable "public_cns_fqdn_base" {
+  description = "The _public_ fully qualified domain name base for the CNS address - e.g. 'triton.zone' for Joyent Public Cloud."
+  type        = "string"
+  default     = "triton.zone"
 }
