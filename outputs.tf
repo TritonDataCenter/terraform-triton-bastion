@@ -1,7 +1,7 @@
 #
 # Outputs
 #
-output "bastion_primary_ip" {
+output "bastion_primaryip" {
   value = ["${triton_machine.bastion.*.primaryip}"]
 }
 
