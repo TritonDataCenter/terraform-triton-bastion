@@ -2,6 +2,9 @@
 
 A Terraform module to create bastion machine(s) for [Joyent's Triton Compute service](https://www.joyent.com/triton/compute).
 
+> :information_source: _Note: This module requires that 
+[Container Name Service (CNS)](https://docs.joyent.com/public-cloud/network/cns) is enabled.
+
 ## Usage
 
 ```hcl

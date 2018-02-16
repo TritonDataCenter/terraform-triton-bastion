@@ -6,7 +6,21 @@ terraform {
 }
 
 provider "triton" {
-  version = ">= 0.4.0"
+  version = ">= 0.4.1"
+}
+
+#
+# Data sources
+#
+data "triton_datacenter" "current" {}
+
+data "triton_account" "current" {}
+
+#
+# Locals
+#
+locals {
+  bastion_address = "${var.cns_service_name}.svc.${data.triton_account.current.id}.${data.triton_datacenter.current.name}.${var.cns_fqdn_base}"
 }
 
 #
@@ -23,19 +37,15 @@ resource "triton_machine" "bastion" {
 
   networks = ["${var.networks}"]
 
-  tags {
-    role = "${var.role_tag_value}"
-  }
-
   cns {
     services = ["${var.cns_service_name}"]
   }
 }
 
 resource "triton_firewall_rule" "ssh" {
-  count = "${length(var.ssh_client_access)}"
+  count = "${length(var.client_access)}"
 
-  rule        = "FROM ${var.ssh_client_access[count.index]} TO tag \"role\" = \"${var.role_tag_value}\" ALLOW tcp PORT 22"
+  rule        = "FROM ${var.client_access[count.index]} TO tag \"triton.cns.services\" = \"${var.cns_service_name}\" ALLOW tcp PORT 22"
   enabled     = true
   description = "${var.name} - Allow access from clients to Bastion servers."
 }
