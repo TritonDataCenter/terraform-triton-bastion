@@ -1,5 +1,5 @@
 
-## 1.0.0-rc2 (Unreleased)
+## 1.0.0-rc2 (2018-03-30)
 
 BACKWARDS INCOMPATIBILITIES / NOTES:
 
