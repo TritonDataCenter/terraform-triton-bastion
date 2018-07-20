@@ -5,10 +5,6 @@ terraform {
   required_version = ">= 0.11.0"
 }
 
-provider "triton" {
-  version = ">= 0.4.1"
-}
-
 #
 # Data sources
 #
